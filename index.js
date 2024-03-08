@@ -44,6 +44,10 @@ const {
         },
     ];
 
+    app.get('/', (req,res)=>{
+        res.status(200).send({msg: 'Ok'})
+    })
+
     app.post('/chathere', async (req, res) => {
         const { name, wantToWrite, writeTo, company, hiringFor, expYears, expMonths, expAs, expType, others, jd } = req.body;
         const prompt = `I am ${name} and I want to write a ${wantToWrite} to ${writeTo} of the ${company} as they are hiring for ${hiringFor} and I have ${expYears} Years and ${expMonths} Months of Experience as a ${expAs} ${expType} and other qualifications are ${others} and this is the Job Description: ${jd}`;
